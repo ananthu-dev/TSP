@@ -22,7 +22,7 @@
 #define runtime 30  /*Algorithm can be run many times in order to see its robustness*/
 
 using namespace std;
-int cities[D][D];
+int cities[D][D]; // Contains weight of the path between cities
 double Foods[FoodNumber][D]; /*Foods is the population of food sources. Each row of Foods matrix is a vector holding D parameters to be optimized. The number of rows of Foods matrix equals to the FoodNumber*/
 double Foods1[FoodNumber][D]; // For TSP
 double f[FoodNumber];  /*f is a vector holding objective function values associated with food sources */
@@ -82,6 +82,8 @@ void MemorizeBestSource()
         }
 	}
 }
+
+// SPV function will do real to discrete conversions
 void SPV1(double sol[D])
 {
     int i,c=0,j,minindex=0;
